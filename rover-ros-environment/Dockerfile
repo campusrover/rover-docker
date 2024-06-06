@@ -61,6 +61,7 @@ RUN rm get-pip.py
 RUN apt-get remove -y supervisor
 RUN pip install 'supervisor==3.4.0'
 
+
 # Code-server
 RUN mkdir /code-server && \
     curl -fL https://github.com/cdr/code-server/releases/download/v4.5.1/code-server-4.5.1-linux-amd64.tar.gz \
@@ -76,7 +77,6 @@ RUN echo "source /opt/ros/noetic/setup.bash" >> .bashrc && \
 WORKDIR /my_ros_data/catkin_ws 
 RUN /bin/bash -c "source /opt/ros/noetic/setup.bash && catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python3 && source devel/setup.bash"
 
-
 # COURSE SPECIFIC CONFIGURATIONS ------------------------------------------------------------------
 WORKDIR /my_ros_data
 
@@ -90,6 +90,7 @@ ADD files/rootfs/.jwmrc /entry/
 COPY files/sshd/sshd_config /etc/ssh/
 COPY files/nginx/default /etc/nginx/sites-enabled/
 COPY files/supervisor/supervisord.conf /etc/supervisor/conf.d/
+COPY files/config/lxterminal.conf /my_ros_data/.config/lxterminal/lxterminal.conf
 
 RUN mkdir -p /my_ros_data/.config/code-server
 COPY files/code-server/config.yaml /my_ros_data/.config/code-server/config.yaml
