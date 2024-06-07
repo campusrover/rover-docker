@@ -100,8 +100,10 @@ WORKDIR /my_ros_data/catkin_ws/src
 RUN git clone -b noetic-devel https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git && \
     git clone -b noetic-devel  https://github.com/ROBOTIS-GIT/turtlebot3.git && \
     git clone -b noetic-devel  https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git && \
+    git clone https://github.com/linorobot/linorobot.git && \
     git clone https://github.com/campusrover/prrexamples.git && \
-    git clone https://github.com/campusrover/gpg_bran4.git
+    git clone https://github.com/campusrover/rpsros  && \
+    git clone https://github.com/campusrover/gpg_bran4.git 
 
 WORKDIR /my_ros_data
 RUN git clone https://github.com/campusrover/rosutils.git
