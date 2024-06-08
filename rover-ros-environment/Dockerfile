@@ -103,6 +103,7 @@ RUN git clone -b noetic-devel https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git
     git clone https://github.com/linorobot/linorobot.git && \
     git clone https://github.com/campusrover/prrexamples.git && \
     git clone https://github.com/campusrover/rpsros  && \
+    git clone https://github.com/YDLIDAR/ydlidar_ros_driver && \
     git clone https://github.com/campusrover/gpg_bran4.git 
 
 WORKDIR /my_ros_data
