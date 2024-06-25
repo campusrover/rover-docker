@@ -24,7 +24,6 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
     python3-wstool \
     python3-vcstools \
     python3-pip \
-    # python3-pylance \
     ros-noetic-rqt \
     ros-noetic-rqt* \
     ros-noetic-rviz \
@@ -114,7 +113,6 @@ WORKDIR /my_ros_data/catkin_ws/src
 RUN git clone -b noetic-devel https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git && \
     git clone -b noetic-devel  https://github.com/ROBOTIS-GIT/turtlebot3.git && \
     git clone -b noetic-devel  https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git && \
-    git clone https://github.com/linorobot/linorobot.git && \
     git clone https://github.com/campusrover/prrexamples.git && \
     git clone https://github.com/campusrover/rpsros  && \
     git clone https://github.com/YDLIDAR/ydlidar_ros_driver && \
