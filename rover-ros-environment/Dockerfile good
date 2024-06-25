@@ -43,21 +43,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
     ros-noetic-turtlebot3-msgs \
     ros-noetic-turtlebot3-gazebo \
     ros-noetic-turtlebot3-teleop \
-    ros-noetic-turtlebot3 \
-    ros-noetic-fiducials \
-    ros-noetic-camera-info-manager \
-    ros-noetic-diagnostic-updater \ 
-    ros-noetic-roslint \
-    ros-noetic-foxglove-bridge \
-    ros-noetic-imu-filter-madgwick \
-    ros-noetic-joy-listener \
-    ros-noetic-robot-state-publisher \
-    ros-noetic-joint-state-publisher \
-    ros-noetic-robot-localization \
-    ros-noetic-joy-teleop \
-    ros-noetic-cv-camera \
-    ros-noetic-joy \
-    ros-noetic-teleop-twist-keyboard
+    ros-noetic-turtlebot3
 
 # Tailscale VPN support
 RUN mkdir -p /my_ros_data/tailscale
