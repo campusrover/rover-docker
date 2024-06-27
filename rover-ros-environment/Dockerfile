@@ -113,11 +113,12 @@ WORKDIR /my_ros_data/catkin_ws/src
 RUN git clone -b noetic-devel https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git && \
     git clone -b noetic-devel  https://github.com/ROBOTIS-GIT/turtlebot3.git && \
     git clone -b noetic-devel  https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git && \
-    git clone https://github.com/YDLIDAR/ydlidar_ros_driver && \
-    git clone git@github.com/campusrover/gpg_bran4.git  && \
-    git clone git@github.com:campusrover/cosi119_src.git  && \
-    git clone git@github.com/campusrover/rpsros  && \
-    git clone git@github.com/campusrover/prrexamples.git
+    git clone https://github.com/YDLIDAR/ydlidar_ros_driver
+
+RUN git clone https://github.com/campusrover/prrexamples.git
+RUN git clone https://github.com/campusrover/gpg_bran4.git
+RUN git clone https://github.com/campusrover/rpsros.git
+RUN git clone https://github.com/campusrover/cosi119_src.git
 
 WORKDIR /my_ros_data
 RUN git clone https://github.com/campusrover/rosutils.git
