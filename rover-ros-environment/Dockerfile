@@ -56,7 +56,10 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
     ros-noetic-joy-teleop \
     ros-noetic-cv-camera \
     ros-noetic-joy \
-    ros-noetic-teleop-twist-keyboard
+    ros-noetic-teleop-twist-keyboard \
+    ros-noetic-gmapping \ 
+    ros-noetic-slam-toolbox
+
 
 # Tailscale VPN support
 RUN mkdir -p /my_ros_data/tailscale
@@ -119,12 +122,21 @@ RUN git clone https://github.com/campusrover/prrexamples.git
 RUN git clone https://github.com/campusrover/gpg_bran4.git
 RUN git clone https://github.com/campusrover/rpsros.git
 RUN git clone https://github.com/campusrover/cosi119_src.git
+RUN git clone https://github.com/YDLIDAR/YDLidar-SDK.git
 
 WORKDIR /my_ros_data
 RUN git clone https://github.com/campusrover/rosutils.git
 RUN cp /my_ros_data/rosutils/bashrc_template.bash /my_ros_data/.bashrc
 
 RUN ln -s /my_ros_data/rosutils/bru.py /usr/local/bin/bru && chmod +x /my_ros_data/rosutils/bru.py
+
+# Set the working directory
+WORKDIR /my_ros_data/catkin_ws/src/YDLidar-SDK
+
+# Run cmake and make
+RUN cmake . && \
+    make && \
+    sudo make install
 
 COPY ./entrypoint.sh /entry/
 RUN chmod +x /entry/entrypoint.sh
