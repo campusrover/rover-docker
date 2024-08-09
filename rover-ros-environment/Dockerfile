@@ -58,7 +58,8 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
     ros-noetic-joy \
     ros-noetic-teleop-twist-keyboard \
     ros-noetic-gmapping \ 
-    ros-noetic-slam-toolbox
+    ros-noetic-slam-toolbox \
+    jq
 
 
 # Tailscale VPN support
